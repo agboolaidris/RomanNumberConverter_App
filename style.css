@@ -8,6 +8,7 @@
 html,body{
     padding: 0;
     margin: 0;
+    
 }
 
 .wrapper{
@@ -16,7 +17,82 @@ html,body{
     width: 100vw;
     justify-content: center;
     align-content: center;
+    background: #070;
+    overflow: hidden;
+ }
+h1{
+
+color: whitesmoke;
+text-align: center;
+padding: 40px 0;
+}
+.content{
+    background: whitesmoke;
+    width:max-content;
+    height: 40vh;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
+    
+}
+
+@media only screen and (max-width:571px){
+    .content{
+        width: 100%;
+        
+    }
+}
+
+#input{
+    width: max-content;
+    height: 40px;
+    text-align: center;
+    border: 2px solid #070;
+    margin: 0px 40px;
+}
+
+@media only screen and (max-width:571px){
+    #input{
+        font-size: 10px;
+        margin: 0px 20px;
+        
+    }
+}
+
+#submit{
+    height: 40px;
+    background: chocolate;
+    margin: 0px 20px;
+    color: whitesmoke;
+    padding: 10px ;
+}
+
+@media only screen and (max-width:571px){
+    #submit{
+        margin: 0px;
+        padding: 5px;
+        
+
+    }
 }
 
 
+#result{
+    margin: 0px 40px;
+    border: 2px solid #070;
+    height: 40px;
+    padding: 10px 20px;
+    color: chocolate;
+
+}
+
+
+@media only screen and (max-width:571px){
+    #result{
+         font-size: 10px;
+         padding: 5px 15px;
+         margin:0px 20px ;
+         
+    }
+}
