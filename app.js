@@ -11,22 +11,26 @@ class Roman_Number_Converter{
             {number : 40, roman : 'XL'},
             {number : 10, roman : 'X'},
             {number : 9, roman : 'IX'},
-            {number : 5, roman : 'X'},
-            {number : 4, roman : 'IX'},
+            {number : 5, roman : 'V'},
+            {number : 4, roman : 'IV'},
             {number : 1, roman : 'I'}
         ]
     }
 
-    convertion(num){
+    convertion(num){ // convert the insert Input number to Roman number
         let result = ''
-       for(let i = 0; i < this.number.length; i++){
+       for(let i = 0; i < this.number.length; i++){ // loop through the this.number array
           
            if(this.number[i].number <= num){
-               result = this.number[i].roman
-               console.log(result)
-
-           }
+               num = num - this.number[i].number // reduce the value of insert input number for the next looping
+                            
+               result = result + this.number[i].roman
+               i--
+               
+             }
        }
+
+       return result
     }
       
 
@@ -34,4 +38,4 @@ class Roman_Number_Converter{
 
 
 let result = new Roman_Number_Converter
-console.log(result.convertion(10))
+console.log(result.convertion(30))
