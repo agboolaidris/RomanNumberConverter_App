@@ -37,15 +37,20 @@ class Roman_Number_Converter{
     }
 
     conrol(){
-          let submit = document.querySelector('#submit')
+                let submit = document.querySelector('#submit') // buttom tag in the index.html page
         
-              submit.addEventListener('click',()=>{
-                    let input = document.querySelector('#input').value;
-                    let result = document.querySelector('#result');
-                    result.innerHTML = this.convertion(input)
+                  submit.addEventListener('click',()=>{ //on click the submit
+                         let input = document.querySelector('#input').value; // the input tag in the index.html page
+                         let result = document.querySelector('#result'); // the span in the index.html page
+                         result.innerHTML = this.convertion(input) // assign the input as the argument for convertion function change the result text
+
+                         //animate the result 
+                         result.style.border = '2px solid chocolate'
+                         result.style.fontSize = '25px'
+                         result.style.color = '#090'
+                         result.style.paddingBottom = '30px'
                     
-               
-          })
+                   })
 
     }
 
