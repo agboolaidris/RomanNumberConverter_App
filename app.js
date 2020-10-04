@@ -15,6 +15,8 @@ class Roman_Number_Converter{
             {number : 4, roman : 'IV'},
             {number : 1, roman : 'I'}
         ]
+
+        this.num = document.querySelector('#input').value // input tag in the index.html page
     }
 
     convertion(num){ // convert the insert Input number to Roman number
@@ -24,18 +26,34 @@ class Roman_Number_Converter{
            if(this.number[i].number <= num){
                num = num - this.number[i].number // reduce the value of insert input number for the next looping
                             
-               result = result + this.number[i].roman
+               result = result + this.number[i].roman // assign the roman value of num to result
                i--
                
              }
+
        }
 
        return result
     }
-      
+
+    conrol(){
+          let submit = document.querySelector('#submit')
+        
+              submit.addEventListener('click',()=>{
+                    let input = document.querySelector('#input').value;
+                    let result = document.querySelector('#result');
+                    result.innerHTML = this.convertion(input)
+                    
+               
+          })
+
+    }
+
+
 
 }
 
 
+
 let result = new Roman_Number_Converter
-console.log(result.convertion(30))
+console.log(result.conrol())
