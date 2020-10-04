@@ -40,8 +40,11 @@ class Roman_Number_Converter{
                 let submit = document.querySelector('#submit') // buttom tag in the index.html page
         
                   submit.addEventListener('click',()=>{ //on click the submit
+                    
                          let input = document.querySelector('#input').value; // the input tag in the index.html page
                          let result = document.querySelector('#result'); // the span in the index.html page
+                          if(input.match(/[0-9]/)){
+
                          result.innerHTML = this.convertion(input) // assign the input as the argument for convertion function change the result text
 
                          //animate the result 
@@ -49,6 +52,23 @@ class Roman_Number_Converter{
                          result.style.fontSize = '25px'
                          result.style.color = '#090'
                          result.style.paddingBottom = '30px'
+                          }
+
+                          else{
+                                 if(input === ''){
+                                    let content = document.querySelector('.content')
+                                    let error =document.querySelector('#alert')
+                                      error.innerHTML = 'INSERT NUMBER'
+                             
+                                 }else{
+
+                              let content = document.querySelector('.content')
+                              let error =document.querySelector('#alert')
+                                error.innerHTML = 'INSERT NUMBER'
+                                error.style.color = 'white'
+                                content.style.background = 'red'
+                                 }
+                          }
                     
                    })
 
