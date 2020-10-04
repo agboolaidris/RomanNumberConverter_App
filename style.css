@@ -21,6 +21,13 @@ html,body{
     background: #070;
     overflow: hidden;
  }
+
+@media only screen and (max-width:571px){
+    .wrapper{
+        justify-content: center;
+    }
+}
+ 
 h1{
 
 color: whitesmoke;
@@ -74,6 +81,13 @@ padding: 40px 0;
     margin: 0 20px;
     color: whitesmoke;
     padding: 10px ;
+    
+}
+
+#submit:hover, #input:hover{
+  cursor: pointer;
+  border: 2px solid chocolate;
+  height: 50px;
 }
 
 @media only screen and (max-width:571px){
@@ -97,7 +111,7 @@ padding: 40px 0;
     border: 2px solid #070;
     height: 40px;
     padding: 10px 20px;
-    color: chocolate;
+    color: black;
     margin: 0 40px;
 
 }
@@ -106,7 +120,7 @@ padding: 40px 0;
 @media only screen and (max-width:571px){
     #result{
          font-size: 10px;
-         padding: 5px 15px;
+         padding: 10px 15px;
          margin:0px 20px ;
          
     }
