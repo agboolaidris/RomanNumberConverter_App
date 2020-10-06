@@ -1,6 +1,12 @@
 class Roman_Number_Converter{
     constructor(){
-        this.number = [
+       this.input = document.querySelector('#input') // input tag in the index.html page
+       this.submit = document.querySelector('#submit') // buttom tag in the index.html page
+
+    }
+
+    convertion(num){ // convert the insert Input number to Roman number
+           const number = [
             {number : 1000, roman : 'M'},
             {number : 900, roman : 'CM'},
             {nuber : 500, roman : 'D'},
@@ -15,18 +21,13 @@ class Roman_Number_Converter{
             {number : 4, roman : 'IV'},
             {number : 1, roman : 'I'}
         ]
-
-        this.num = document.querySelector('#input').value // input tag in the index.html page
-    }
-
-    convertion(num){ // convert the insert Input number to Roman number
         let result = ''
-       for(let i = 0; i < this.number.length; i++){ // loop through the this.number array
+       for(let i = 0; i < number.length; i++){ // loop through the this.number array
           
-           if(this.number[i].number <= num){
-               num = num - this.number[i].number // reduce the value of insert input number for the next looping
+           if(number[i].number <= num){
+               num = num - number[i].number // reduce the value of insert input number for the next looping
                             
-               result = result + this.number[i].roman // assign the roman value of num to result
+               result = result + number[i].roman // assign the roman value of num to result
                i--
                
              }
@@ -37,11 +38,12 @@ class Roman_Number_Converter{
     }
 
     conrol(){
-                let submit = document.querySelector('#submit') // buttom tag in the index.html page
-        
+               
+                  let submit = this.submit
                   submit.addEventListener('click',()=>{ //on click the submit
                     
-                         let input = document.querySelector('#input').value; // the input tag in the index.html page
+                        let input = this.input.value; // the input tag in the index.html page
+                        console.log(this.input)
                          let result = document.querySelector('#result'); // the span in the index.html page
                           if(input.match(/[0-9]/)){
 
@@ -55,19 +57,19 @@ class Roman_Number_Converter{
                           }
 
                           else{
-                                 if(input === ''){
-                                    let content = document.querySelector('.content')
-                                    let error =document.querySelector('#alert')
-                                      error.innerHTML = 'INSERT NUMBER'
-                             
-                                 }else{
+                                 
+                               setInterval(()=>{
+                                            let content = document.querySelector('.content')
+                                            let error =document.querySelector('#alert')
+                                            error.innerHTML = 'INSERT NUMBER'
+                                            error.style.color = 'white'
+                                            content.style.background = ' rgb(75, 34, 5)'
+                        
 
-                              let content = document.querySelector('.content')
-                              let error =document.querySelector('#alert')
-                                error.innerHTML = 'INSERT NUMBER'
-                                error.style.color = 'white'
-                                content.style.background = 'red'
-                                 }
+                               },1000)
+
+                               
+                                        
                           }
                     
                    })
