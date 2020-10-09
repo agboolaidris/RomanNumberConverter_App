@@ -42,35 +42,33 @@ class Roman_Number_Converter{
                   let submit = this.submit
                   submit.addEventListener('click',()=>{ //on click the submit
                     
-                        let input = this.input.value; // the input tag in the index.html page
-                        console.log(this.input)
+                         let input = this.input; // the input tag in the index.html page
                          let result = document.querySelector('#result'); // the span in the index.html page
-                          if(input.match(/[0-9]/)){
+                         let error =document.querySelector('#alert')
+                        
+                          if(input.value.match(/^[0-9]+/)==input.value){
+                                     
+                                     result.innerHTML = this.convertion(input.value) // assign the input as the argument for convertion function change the result text
 
-                         result.innerHTML = this.convertion(input) // assign the input as the argument for convertion function change the result text
+                                     //animate the result 
+                                     result.style.border = '2px solid chocolate';
+                                     result.style.fontSize = '15px';
+                                     result.style.color = '#070';
+                                     result.style.textWeight = 'bolder'
+                                     result.style.padding = '10px 0px'
 
-                         //animate the result 
-                         result.style.border = '2px solid chocolate'
-                         result.style.fontSize = '25px'
-                         result.style.color = '#090'
-                         result.style.paddingBottom = '30px'
+                                    
                           }
 
                           else{
-                                 
-                               setInterval(()=>{
-                                            let content = document.querySelector('.content')
-                                            let error =document.querySelector('#alert')
-                                            error.innerHTML = 'INSERT NUMBER'
-                                            error.style.color = 'white'
-                                            content.style.background = ' rgb(75, 34, 5)'
-                        
+                                 error.innerHTML = 'INSERT NUMBER'
+                             }
 
-                               },1000)
-
-                               
-                                        
-                          }
+                             input.addEventListener('click',()=>{
+                                error.innerHTML = ''
+                                result.innerHTML = 'RESULT'
+                                   
+                            })
                     
                    })
 
